@@ -39,7 +39,7 @@ Vous devez encapsuler le script vous permettant de détecter l’âge dans une b
 
 function createMyButton() {
     var boutontest = document.body.appendChild(document.createElement('button'));
-    boutontest.innerHTML = 'DetectMyAge';
+    boutontest.textContent = 'DetectMyAge';
     boutontest.addEventListener('click',detectMyAgeByNight);
 }
 
@@ -63,7 +63,7 @@ function matrixGenerator(tab) {
         if (typeof item == 'object') {
             item.forEach( function(item2) {
                 box = tr.appendChild(document.createElement('td'));
-                box.innerHTML = item2;
+                box.textContent = item2;
                 if(item2 == 0) {
                     box.style.color = 'white';
                     box.style.background = 'black';
@@ -72,7 +72,7 @@ function matrixGenerator(tab) {
             return;
         }
         box = tr.appendChild(document.createElement('td'));
-        box.innerHTML = item;
+        box.textContent = item;
     })
 }
 
