@@ -3,31 +3,15 @@
 /*
 Vous devez réaliser les tables de multiplications de “1, 2, 3, 5” et “8”.
 */
-var i,x;
-x=1;
+var j,i,x;
 
-for(i=1;i<=10;i++){
-    console.log(x*i);
-}
+var tab = [1, 2, 3, 5, 8];
 
-x=2
-for(i=1;i<=10;i++){
-    console.log(x*i);
-}
-
-x=3
-for(i=1;i<=10;i++){
-    console.log(x*i);
-}
-
-x=5
-for(i=1;i<=10;i++){
-    console.log(x*i);
-}
-
-x=8
-for(i=1;i<=10;i++){
-    console.log(x*i);
+for (j=0; j<tab.length; j++) {
+    x = tab[j];
+    for(i=1;i<=10;i++){
+        console.log(x*i);
+    }
 }
 
 /*
