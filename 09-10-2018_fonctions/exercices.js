@@ -5,13 +5,14 @@ Si c’est un nombre retournez “et pourquoi pas 42 ?”.
 */
 
 function myPutStr (string) {
-    if (typeof string === 'number') {
+    if (!isNaN(parseInt(string))) {
         return 'et pourquoi pas 42 ?';
     }
     return string;
 }
 
 console.log(myPutStr('test'));
+console.log(myPutStr('75'));
 console.log(myPutStr(75));
 
 /*
@@ -126,4 +127,4 @@ function resulTab (tab) {
     return result;
 }
 
-console.log(fiboInTab(42));
+console.log(fiboInTab(4));
