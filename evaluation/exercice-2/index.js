@@ -1,61 +1,40 @@
-'use strict'
-
-/*
-  Creates a empty load bar (a black div which have load-bar class)
-*/
-function initLoadBar() {
-  var div = document.createElement('div');
-  div.style.height = '100px';
-  div.style.width = '1000px';
-  div.style.background = 'black';
-  div.style.borderRadius = '10px';
-  div.classList.add('load-bar');
-
-  document.body.appendChild(div);
-}
+'use strict';
 
 /*
   Draws progression of a loadBar in a div with load-bar class if it exists.
 */
 function drawBar(sum,nbr) {
+
   if (nbr > sum) {
     return ('progress value must be under max value');
   }
-  var fullBar = document.body.querySelector('.load-bar');
 
-  if (fullBar === null) {
-    return 'No load bar';
-  }
-
-  var fullWidth = fullBar.style.width.replace('px','');
-  var fullHeight = fullBar.style.height;
-
-  if (fullWidth === null) {
-    return 'Bar width is not set';
-  }
-  if (fullHeight === null) {
-    return 'Bar height is not set';
-  }
+  var fullBar = document.createElement('div');
+  fullBar.style.height = '100px';
+  fullBar.style.width = '1000px';
+  fullBar.style.background = 'black';
+  fullBar.style.borderRadius = '10px';
 
   var progressBar = document.createElement('div');
   var progressRate = (nbr*100 / sum) / 100;
 
-  progressBar.style.height = fullHeight;
-  progressBar.style.width = (progressRate * fullWidth) + 'px';
+  progressBar.style.height = '100px';
+  progressBar.style.width = '0px';
   progressBar.style.background = 'pink';
+  progressBar.style.transitionProperty = 'width';
+  progressBar.style.transitionDuration = '2s';
+  progressBar.style.transitionDelay = '1s';
 
-  fullBar.innerHTML = '';
+
   fullBar.appendChild(progressBar);
+  document.body.appendChild(fullBar);
+
+  var progressRate = (nbr*100 / sum) / 100;
+
+  setTimeout(function() {
+    progressBar.style.width = (progressRate * 1000) + 'px';
+  },1);
 }
 
-initLoadBar();
-var progression = 0;
-var max = 100;
 
-setInterval(function() {
-  progression++;
-  drawBar(max,progression);
-  if (progression == max) {
-    clearInterval();
-  }
-}, 100);
+drawBar(100,100);
