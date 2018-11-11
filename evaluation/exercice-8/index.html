@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title> Exercice 8 </title>
+  </head>
+  <body>
+  <h1 style="margin: auto;">Bataille Navale!</h1>
+    <table>
+      <thead>
+        <tr>
+          <th>\</th>
+          <th>1</th>
+          <th>2</th>
+          <th>3</th>
+          <th>4</th>
+          <th>5</th>
+          <th>6</th>
+          <th>7</th>
+          <th>8</th>
+          <th>9</th>
+          <th>10</th>
+          <th>11</th>
+          <th>12</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>A</td>
+          <td onclick="battleship.shot(0,0,this);" style="width: 30px; height: 30px; background-color: gray;" onmouseover="this.style.backgroundColor='lightgray'" onmouseout="this.style.backgroundColor='gray'"></td>
+          <td onclick="battleship.shot(1,0,this);" style="width: 30px; height: 30px; background-color: gray;" onmouseover="this.style.backgroundColor='lightgray'" onmouseout="this.style.backgroundColor='gray'"></td>
+          <td onclick="battleship.shot(2,0,this);" style="width: 30px; height: 30px; background-color: gray;" onmouseover="this.style.backgroundColor='lightgray'" onmouseout="this.style.backgroundColor='gray'"></td>
+          <td onclick="battleship.shot(3,0,this);" style="width: 30px; height: 30px; background-color: gray;" onmouseover="this.style.backgroundColor='lightgray'" onmouseout="this.style.backgroundColor='gray'"></td>
+          <td onclick="battleship.shot(4,0,this);" style="width: 30px; height: 30px; background-color: gray;" onmouseover="this.style.backgroundColor='lightgray'" onmouseout="this.style.backgroundColor='gray'"></td>
+          <td onclick="battleship.shot(5,0,this);" style="width: 30px; height: 30px; background-color: gray;" onmouseover="this.style.backgroundColor='lightgray'" onmouseout="this.style.backgroundColor='gray'"></td>
+          <td onclick="battleship.shot(6,0,this);" style="width: 30px; height: 30px; background-color: gray;" onmouseover="this.style.backgroundColor='lightgray'" onmouseout="this.style.backgroundColor='gray'"></td>
+          <td onclick="battleship.shot(7,0,this);" style="width: 30px; height: 30px; background-color: gray;" onmouseover="this.style.backgroundColor='lightgray'" onmouseout="this.style.backgroundColor='gray'"></td>
+          <td onclick="battleship.shot(8,0,this);" style="width: 30px; height: 30px; background-color: gray;" onmouseover="this.style.backgroundColor='lightgray'" onmouseout="this.style.backgroundColor='gray'"></td>
+          <td onclick="battleship.shot(9,0,this);" style="width: 30px; height: 30px; background-color: gray;" onmouseover="this.style.backgroundColor='lightgray'" onmouseout="this.style.backgroundColor='gray'"></td>
+          <td onclick="battleship.shot(10,0,this);" style="width: 30px; height: 30px; background-color: gray;" onmouseover="this.style.backgroundColor='lightgray'" onmouseout="this.style.backgroundColor='gray'"></td>
+          <td onclick="battleship.shot(11,0,this);" style="width: 30px; height: 30px; background-color: gray;" onmouseover="this.style.backgroundColor='lightgray'" onmouseout="this.style.backgroundColor='gray'"></td>
+        </tr>
+        <tr>
+          <td>B</td>
+          <td onclick="battleship.shot(0,1,this);" style="width: 30px; height: 30px; background-color: gray;" onmouseover="this.style.backgroundColor='lightgray'" onmouseout="this.style.backgroundColor='gray'"></td>
+          <td onclick="battleship.shot(1,1,this);" style="width: 30px; height: 30px; background-color: gray;" onmouseover="this.style.backgroundColor='lightgray'" onmouseout="this.style.backgroundColor='gray'"></td>
+          <td onclick="battleship.shot(2,1,this);" style="width: 30px; height: 30px; background-color: gray;" onmouseover="this.style.backgroundColor='lightgray'" onmouseout="this.style.backgroundColor='gray'"></td>
+          <td onclick="battleship.shot(3,1,this);" style="width: 30px; height: 30px; background-color: gray;" onmouseover="this.style.backgroundColor='lightgray'" onmouseout="this.style.backgroundColor='gray'"></td>
+          <td onclick="battleship.shot(4,1,this);" style="width: 30px; height: 30px; background-color: gray;" onmouseover="this.style.backgroundColor='lightgray'" onmouseout="this.style.backgroundColor='gray'"></td>
+          <td onclick="battleship.shot(5,1,this);" style="width: 30px; height: 30px; background-color: gray;" onmouseover="this.style.backgroundColor='lightgray'" onmouseout="this.style.backgroundColor='gray'"></td>
+          <td onclick="battleship.shot(6,1,this);" style="width: 30px; height: 30px; background-color: gray;" onmouseover="this.style.backgroundColor='lightgray'" onmouseout="this.style.backgroundColor='gray'"></td>
+          <td onclick="battleship.shot(7,1,this);" style="width: 30px; height: 30px; background-color: gray;" onmouseover="this.style.backgroundColor='lightgray'" onmouseout="this.style.backgroundColor='gray'"></td>
+          <td onclick="battleship.shot(8,1,this);" style="width: 30px; height: 30px; background-color: gray;" onmouseover="this.style.backgroundColor='lightgray'" onmouseout="this.style.backgroundColor='gray'"></td>
+          <td onclick="battleship.shot(9,1,this);" style="width: 30px; height: 30px; background-color: gray;" onmouseover="this.style.backgroundColor='lightgray'" onmouseout="this.style.backgroundColor='gray'"></td>
+          <td onclick="battleship.shot(10,1,this);" style="width: 30px; height: 30px; background-color: gray;" onmouseover="this.style.backgroundColor='lightgray'" onmouseout="this.style.backgroundColor='gray'"></td>
+          <td onclick="battleship.shot(11,1,this);" style="width: 30px; height: 30px; background-color: gray;" onmouseover="this.style.backgroundColor='lightgray'" onmouseout="this.style.backgroundColor='gray'"></td>
+        </tr>
+        <tr>
+          <td>C</td>
+          <td onclick="battleship.shot(0,2,this);" style="width: 30px; height: 30px; background-color: gray;" onmouseover="this.style.backgroundColor='lightgray'" onmouseout="this.style.backgroundColor='gray'"></td>
+          <td onclick="battleship.shot(1,2,this);" style="width: 30px; height: 30px; background-color: gray;" onmouseover="this.style.backgroundColor='lightgray'" onmouseout="this.style.backgroundColor='gray'"></td>
+          <td onclick="battleship.shot(2,2,this);" style="width: 30px; height: 30px; background-color: gray;" onmouseover="this.style.backgroundColor='lightgray'" onmouseout="this.style.backgroundColor='gray'"></td>
+          <td onclick="battleship.shot(3,2,this);" style="width: 30px; height: 30px; background-color: gray;" onmouseover="this.style.backgroundColor='lightgray'" onmouseout="this.style.backgroundColor='gray'"></td>
+          <td onclick="battleship.shot(4,2,this);" style="width: 30px; height: 30px; background-color: gray;" onmouseover="this.style.backgroundColor='lightgray'" onmouseout="this.style.backgroundColor='gray'"></td>
+          <td onclick="battleship.shot(5,2,this);" style="width: 30px; height: 30px; background-color: gray;" onmouseover="this.style.backgroundColor='lightgray'" onmouseout="this.style.backgroundColor='gray'"></td>
+          <td onclick="battleship.shot(6,2,this);" style="width: 30px; height: 30px; background-color: gray;" onmouseover="this.style.backgroundColor='lightgray'" onmouseout="this.style.backgroundColor='gray'"></td>
+          <td onclick="battleship.shot(7,2,this);" style="width: 30px; height: 30px; background-color: gray;" onmouseover="this.style.backgroundColor='lightgray'" onmouseout="this.style.backgroundColor='gray'"></td>
+          <td onclick="battleship.shot(8,2,this);" style="width: 30px; height: 30px; background-color: gray;" onmouseover="this.style.backgroundColor='lightgray'" onmouseout="this.style.backgroundColor='gray'"></td>
+          <td onclick="battleship.shot(9,2,this);" style="width: 30px; height: 30px; background-color: gray;" onmouseover="this.style.backgroundColor='lightgray'" onmouseout="this.style.backgroundColor='gray'"></td>
+          <td onclick="battleship.shot(10,2,this);" style="width: 30px; height: 30px; background-color: gray;" onmouseover="this.style.backgroundColor='lightgray'" onmouseout="this.style.backgroundColor='gray'"></td>
+          <td onclick="battleship.shot(11,2,this);" style="width: 30px; height: 30px; background-color: gray;" onmouseover="this.style.backgroundColor='lightgray'" onmouseout="this.style.backgroundColor='gray'"></td>
+        </tr>
+        <tr>
+          <td>D</td>
+          <td onclick="battleship.shot(0,3,this);" style="width: 30px; height: 30px; background-color: gray;" onmouseover="this.style.backgroundColor='lightgray'" onmouseout="this.style.backgroundColor='gray'"></td>
+          <td onclick="battleship.shot(1,3,this);" style="width: 30px; height: 30px; background-color: gray;" onmouseover="this.style.backgroundColor='lightgray'" onmouseout="this.style.backgroundColor='gray'"></td>
+          <td onclick="battleship.shot(2,3,this);" style="width: 30px; height: 30px; background-color: gray;" onmouseover="this.style.backgroundColor='lightgray'" onmouseout="this.style.backgroundColor='gray'"></td>
+          <td onclick="battleship.shot(3,3,this);" style="width: 30px; height: 30px; background-color: gray;" onmouseover="this.style.backgroundColor='lightgray'" onmouseout="this.style.backgroundColor='gray'"></td>
+          <td onclick="battleship.shot(4,3,this);" style="width: 30px; height: 30px; background-color: gray;" onmouseover="this.style.backgroundColor='lightgray'" onmouseout="this.style.backgroundColor='gray'"></td>
+          <td onclick="battleship.shot(5,3,this);" style="width: 30px; height: 30px; background-color: gray;" onmouseover="this.style.backgroundColor='lightgray'" onmouseout="this.style.backgroundColor='gray'"></td>
+          <td onclick="battleship.shot(6,3,this);" style="width: 30px; height: 30px; background-color: gray;" onmouseover="this.style.backgroundColor='lightgray'" onmouseout="this.style.backgroundColor='gray'"></td>
+          <td onclick="battleship.shot(7,3,this);" style="width: 30px; height: 30px; background-color: gray;" onmouseover="this.style.backgroundColor='lightgray'" onmouseout="this.style.backgroundColor='gray'"></td>
+          <td onclick="battleship.shot(8,3,this);" style="width: 30px; height: 30px; background-color: gray;" onmouseover="this.style.backgroundColor='lightgray'" onmouseout="this.style.backgroundColor='gray'"></td>
+          <td onclick="battleship.shot(9,3,this);" style="width: 30px; height: 30px; background-color: gray;" onmouseover="this.style.backgroundColor='lightgray'" onmouseout="this.style.backgroundColor='gray'"></td>
+          <td onclick="battleship.shot(10,3,this);" style="width: 30px; height: 30px; background-color: gray;" onmouseover="this.style.backgroundColor='lightgray'" onmouseout="this.style.backgroundColor='gray'"></td>
+          <td onclick="battleship.shot(11,3,this);" style="width: 30px; height: 30px; background-color: gray;" onmouseover="this.style.backgroundColor='lightgray'" onmouseout="this.style.backgroundColor='gray'"></td>
+        </tr>
+        <tr>
+          <td>E</td>
+          <td onclick="battleship.shot(0,4,this);" style="width: 30px; height: 30px; background-color: gray;" onmouseover="this.style.backgroundColor='lightgray'" onmouseout="this.style.backgroundColor='gray'"></td>
+          <td onclick="battleship.shot(1,4,this);" style="width: 30px; height: 30px; background-color: gray;" onmouseover="this.style.backgroundColor='lightgray'" onmouseout="this.style.backgroundColor='gray'"></td>
+          <td onclick="battleship.shot(2,4,this);" style="width: 30px; height: 30px; background-color: gray;" onmouseover="this.style.backgroundColor='lightgray'" onmouseout="this.style.backgroundColor='gray'"></td>
+          <td onclick="battleship.shot(3,4,this);" style="width: 30px; height: 30px; background-color: gray;" onmouseover="this.style.backgroundColor='lightgray'" onmouseout="this.style.backgroundColor='gray'"></td>
+          <td onclick="battleship.shot(4,4,this);" style="width: 30px; height: 30px; background-color: gray;" onmouseover="this.style.backgroundColor='lightgray'" onmouseout="this.style.backgroundColor='gray'"></td>
+          <td onclick="battleship.shot(5,4,this);" style="width: 30px; height: 30px; background-color: gray;" onmouseover="this.style.backgroundColor='lightgray'" onmouseout="this.style.backgroundColor='gray'"></td>
+          <td onclick="battleship.shot(6,4,this);" style="width: 30px; height: 30px; background-color: gray;" onmouseover="this.style.backgroundColor='lightgray'" onmouseout="this.style.backgroundColor='gray'"></td>
+          <td onclick="battleship.shot(7,4,this);" style="width: 30px; height: 30px; background-color: gray;" onmouseover="this.style.backgroundColor='lightgray'" onmouseout="this.style.backgroundColor='gray'"></td>
+          <td onclick="battleship.shot(8,4,this);" style="width: 30px; height: 30px; background-color: gray;" onmouseover="this.style.backgroundColor='lightgray'" onmouseout="this.style.backgroundColor='gray'"></td>
+          <td onclick="battleship.shot(9,4,this);" style="width: 30px; height: 30px; background-color: gray;" onmouseover="this.style.backgroundColor='lightgray'" onmouseout="this.style.backgroundColor='gray'"></td>
+          <td onclick="battleship.shot(10,4,this);" style="width: 30px; height: 30px; background-color: gray;" onmouseover="this.style.backgroundColor='lightgray'" onmouseout="this.style.backgroundColor='gray'"></td>
+          <td onclick="battleship.shot(11,4,this);" style="width: 30px; height: 30px; background-color: gray;" onmouseover="this.style.backgroundColor='lightgray'" onmouseout="this.style.backgroundColor='gray'"></td>
+        </tr>
+        <tr>
+          <td>F</td>
+          <td onclick="battleship.shot(0,5,this);" style="width: 30px; height: 30px; background-color: gray;" onmouseover="this.style.backgroundColor='lightgray'" onmouseout="this.style.backgroundColor='gray'"></td>
+          <td onclick="battleship.shot(1,5,this);" style="width: 30px; height: 30px; background-color: gray;" onmouseover="this.style.backgroundColor='lightgray'" onmouseout="this.style.backgroundColor='gray'"></td>
+          <td onclick="battleship.shot(2,5,this);" style="width: 30px; height: 30px; background-color: gray;" onmouseover="this.style.backgroundColor='lightgray'" onmouseout="this.style.backgroundColor='gray'"></td>
+          <td onclick="battleship.shot(3,5,this);" style="width: 30px; height: 30px; background-color: gray;" onmouseover="this.style.backgroundColor='lightgray'" onmouseout="this.style.backgroundColor='gray'"></td>
+          <td onclick="battleship.shot(4,5,this);" style="width: 30px; height: 30px; background-color: gray;" onmouseover="this.style.backgroundColor='lightgray'" onmouseout="this.style.backgroundColor='gray'"></td>
+          <td onclick="battleship.shot(5,5,this);" style="width: 30px; height: 30px; background-color: gray;" onmouseover="this.style.backgroundColor='lightgray'" onmouseout="this.style.backgroundColor='gray'"></td>
+          <td onclick="battleship.shot(6,5,this);" style="width: 30px; height: 30px; background-color: gray;" onmouseover="this.style.backgroundColor='lightgray'" onmouseout="this.style.backgroundColor='gray'"></td>
+          <td onclick="battleship.shot(7,5,this);" style="width: 30px; height: 30px; background-color: gray;" onmouseover="this.style.backgroundColor='lightgray'" onmouseout="this.style.backgroundColor='gray'"></td>
+          <td onclick="battleship.shot(8,5,this);" style="width: 30px; height: 30px; background-color: gray;" onmouseover="this.style.backgroundColor='lightgray'" onmouseout="this.style.backgroundColor='gray'"></td>
+          <td onclick="battleship.shot(9,5,this);" style="width: 30px; height: 30px; background-color: gray;" onmouseover="this.style.backgroundColor='lightgray'" onmouseout="this.style.backgroundColor='gray'"></td>
+          <td onclick="battleship.shot(10,5,this);" style="width: 30px; height: 30px; background-color: gray;" onmouseover="this.style.backgroundColor='lightgray'" onmouseout="this.style.backgroundColor='gray'"></td>
+          <td onclick="battleship.shot(11,5,this);" style="width: 30px; height: 30px; background-color: gray;" onmouseover="this.style.backgroundColor='lightgray'" onmouseout="this.style.backgroundColor='gray'"></td>
+        </tr>
+        <tr>
+          <td>G</td>
+          <td onclick="battleship.shot(0,6,this);" style="width: 30px; height: 30px; background-color: gray;" onmouseover="this.style.backgroundColor='lightgray'" onmouseout="this.style.backgroundColor='gray'"></td>
+          <td onclick="battleship.shot(1,6,this);" style="width: 30px; height: 30px; background-color: gray;" onmouseover="this.style.backgroundColor='lightgray'" onmouseout="this.style.backgroundColor='gray'"></td>
+          <td onclick="battleship.shot(2,6,this);" style="width: 30px; height: 30px; background-color: gray;" onmouseover="this.style.backgroundColor='lightgray'" onmouseout="this.style.backgroundColor='gray'"></td>
+          <td onclick="battleship.shot(3,6,this);" style="width: 30px; height: 30px; background-color: gray;" onmouseover="this.style.backgroundColor='lightgray'" onmouseout="this.style.backgroundColor='gray'"></td>
+          <td onclick="battleship.shot(4,6,this);" style="width: 30px; height: 30px; background-color: gray;" onmouseover="this.style.backgroundColor='lightgray'" onmouseout="this.style.backgroundColor='gray'"></td>
+          <td onclick="battleship.shot(5,6,this);" style="width: 30px; height: 30px; background-color: gray;" onmouseover="this.style.backgroundColor='lightgray'" onmouseout="this.style.backgroundColor='gray'"></td>
+          <td onclick="battleship.shot(6,6,this);" style="width: 30px; height: 30px; background-color: gray;" onmouseover="this.style.backgroundColor='lightgray'" onmouseout="this.style.backgroundColor='gray'"></td>
+          <td onclick="battleship.shot(7,6,this);" style="width: 30px; height: 30px; background-color: gray;" onmouseover="this.style.backgroundColor='lightgray'" onmouseout="this.style.backgroundColor='gray'"></td>
+          <td onclick="battleship.shot(8,6,this);" style="width: 30px; height: 30px; background-color: gray;" onmouseover="this.style.backgroundColor='lightgray'" onmouseout="this.style.backgroundColor='gray'"></td>
+          <td onclick="battleship.shot(9,6,this);" style="width: 30px; height: 30px; background-color: gray;" onmouseover="this.style.backgroundColor='lightgray'" onmouseout="this.style.backgroundColor='gray'"></td>
+          <td onclick="battleship.shot(10,6,this);" style="width: 30px; height: 30px; background-color: gray;" onmouseover="this.style.backgroundColor='lightgray'" onmouseout="this.style.backgroundColor='gray'"></td>
+          <td onclick="battleship.shot(11,6,this);" style="width: 30px; height: 30px; background-color: gray;" onmouseover="this.style.backgroundColor='lightgray'" onmouseout="this.style.backgroundColor='gray'"></td>
+        </tr>
+        <tr>
+          <td>H</td>
+          <td onclick="battleship.shot(0,7,this);" style="width: 30px; height: 30px; background-color: gray;" onmouseover="this.style.backgroundColor='lightgray'" onmouseout="this.style.backgroundColor='gray'"></td>
+          <td onclick="battleship.shot(1,7,this);" style="width: 30px; height: 30px; background-color: gray;" onmouseover="this.style.backgroundColor='lightgray'" onmouseout="this.style.backgroundColor='gray'"></td>
+          <td onclick="battleship.shot(2,7,this);" style="width: 30px; height: 30px; background-color: gray;" onmouseover="this.style.backgroundColor='lightgray'" onmouseout="this.style.backgroundColor='gray'"></td>
+          <td onclick="battleship.shot(3,7,this);" style="width: 30px; height: 30px; background-color: gray;" onmouseover="this.style.backgroundColor='lightgray'" onmouseout="this.style.backgroundColor='gray'"></td>
+          <td onclick="battleship.shot(4,7,this);" style="width: 30px; height: 30px; background-color: gray;" onmouseover="this.style.backgroundColor='lightgray'" onmouseout="this.style.backgroundColor='gray'"></td>
+          <td onclick="battleship.shot(5,7,this);" style="width: 30px; height: 30px; background-color: gray;" onmouseover="this.style.backgroundColor='lightgray'" onmouseout="this.style.backgroundColor='gray'"></td>
+          <td onclick="battleship.shot(6,7,this);" style="width: 30px; height: 30px; background-color: gray;" onmouseover="this.style.backgroundColor='lightgray'" onmouseout="this.style.backgroundColor='gray'"></td>
+          <td onclick="battleship.shot(7,7,this);" style="width: 30px; height: 30px; background-color: gray;" onmouseover="this.style.backgroundColor='lightgray'" onmouseout="this.style.backgroundColor='gray'"></td>
+          <td onclick="battleship.shot(8,7,this);" style="width: 30px; height: 30px; background-color: gray;" onmouseover="this.style.backgroundColor='lightgray'" onmouseout="this.style.backgroundColor='gray'"></td>
+          <td onclick="battleship.shot(9,7,this);" style="width: 30px; height: 30px; background-color: gray;" onmouseover="this.style.backgroundColor='lightgray'" onmouseout="this.style.backgroundColor='gray'"></td>
+          <td onclick="battleship.shot(10,7,this);" style="width: 30px; height: 30px; background-color: gray;" onmouseover="this.style.backgroundColor='lightgray'" onmouseout="this.style.backgroundColor='gray'"></td>
+          <td onclick="battleship.shot(11,7,this);" style="width: 30px; height: 30px; background-color: gray;" onmouseover="this.style.backgroundColor='lightgray'" onmouseout="this.style.backgroundColor='gray'"></td>
+        </tr>
+        <tr>
+          <td>I</td>
+          <td onclick="battleship.shot(0,8,this);" style="width: 30px; height: 30px; background-color: gray;" onmouseover="this.style.backgroundColor='lightgray'" onmouseout="this.style.backgroundColor='gray'"></td>
+          <td onclick="battleship.shot(1,8,this);" style="width: 30px; height: 30px; background-color: gray;" onmouseover="this.style.backgroundColor='lightgray'" onmouseout="this.style.backgroundColor='gray'"></td>
+          <td onclick="battleship.shot(2,8,this);" style="width: 30px; height: 30px; background-color: gray;" onmouseover="this.style.backgroundColor='lightgray'" onmouseout="this.style.backgroundColor='gray'"></td>
+          <td onclick="battleship.shot(3,8,this);" style="width: 30px; height: 30px; background-color: gray;" onmouseover="this.style.backgroundColor='lightgray'" onmouseout="this.style.backgroundColor='gray'"></td>
+          <td onclick="battleship.shot(4,8,this);" style="width: 30px; height: 30px; background-color: gray;" onmouseover="this.style.backgroundColor='lightgray'" onmouseout="this.style.backgroundColor='gray'"></td>
+          <td onclick="battleship.shot(5,8,this);" style="width: 30px; height: 30px; background-color: gray;" onmouseover="this.style.backgroundColor='lightgray'" onmouseout="this.style.backgroundColor='gray'"></td>
+          <td onclick="battleship.shot(6,8,this);" style="width: 30px; height: 30px; background-color: gray;" onmouseover="this.style.backgroundColor='lightgray'" onmouseout="this.style.backgroundColor='gray'"></td>
+          <td onclick="battleship.shot(7,8,this);" style="width: 30px; height: 30px; background-color: gray;" onmouseover="this.style.backgroundColor='lightgray'" onmouseout="this.style.backgroundColor='gray'"></td>
+          <td onclick="battleship.shot(8,8,this);" style="width: 30px; height: 30px; background-color: gray;" onmouseover="this.style.backgroundColor='lightgray'" onmouseout="this.style.backgroundColor='gray'"></td>
+          <td onclick="battleship.shot(9,8,this);" style="width: 30px; height: 30px; background-color: gray;" onmouseover="this.style.backgroundColor='lightgray'" onmouseout="this.style.backgroundColor='gray'"></td>
+          <td onclick="battleship.shot(10,8,this);" style="width: 30px; height: 30px; background-color: gray;" onmouseover="this.style.backgroundColor='lightgray'" onmouseout="this.style.backgroundColor='gray'"></td>
+          <td onclick="battleship.shot(11,8,this);" style="width: 30px; height: 30px; background-color: gray;" onmouseover="this.style.backgroundColor='lightgray'" onmouseout="this.style.backgroundColor='gray'"></td>
+        </tr>
+        <tr>
+          <td>J</td>
+          <td onclick="battleship.shot(0,9,this);" style="width: 30px; height: 30px; background-color: gray;" onmouseover="this.style.backgroundColor='lightgray'" onmouseout="this.style.backgroundColor='gray'"></td>
+          <td onclick="battleship.shot(1,9,this);" style="width: 30px; height: 30px; background-color: gray;" onmouseover="this.style.backgroundColor='lightgray'" onmouseout="this.style.backgroundColor='gray'"></td>
+          <td onclick="battleship.shot(2,9,this);" style="width: 30px; height: 30px; background-color: gray;" onmouseover="this.style.backgroundColor='lightgray'" onmouseout="this.style.backgroundColor='gray'"></td>
+          <td onclick="battleship.shot(3,9,this);" style="width: 30px; height: 30px; background-color: gray;" onmouseover="this.style.backgroundColor='lightgray'" onmouseout="this.style.backgroundColor='gray'"></td>
+          <td onclick="battleship.shot(4,9,this);" style="width: 30px; height: 30px; background-color: gray;" onmouseover="this.style.backgroundColor='lightgray'" onmouseout="this.style.backgroundColor='gray'"></td>
+          <td onclick="battleship.shot(5,9,this);" style="width: 30px; height: 30px; background-color: gray;" onmouseover="this.style.backgroundColor='lightgray'" onmouseout="this.style.backgroundColor='gray'"></td>
+          <td onclick="battleship.shot(6,9,this);" style="width: 30px; height: 30px; background-color: gray;" onmouseover="this.style.backgroundColor='lightgray'" onmouseout="this.style.backgroundColor='gray'"></td>
+          <td onclick="battleship.shot(7,9,this);" style="width: 30px; height: 30px; background-color: gray;" onmouseover="this.style.backgroundColor='lightgray'" onmouseout="this.style.backgroundColor='gray'"></td>
+          <td onclick="battleship.shot(8,9,this);" style="width: 30px; height: 30px; background-color: gray;" onmouseover="this.style.backgroundColor='lightgray'" onmouseout="this.style.backgroundColor='gray'"></td>
+          <td onclick="battleship.shot(9,9,this);" style="width: 30px; height: 30px; background-color: gray;" onmouseover="this.style.backgroundColor='lightgray'" onmouseout="this.style.backgroundColor='gray'"></td>
+          <td onclick="battleship.shot(10,9,this);" style="width: 30px; height: 30px; background-color: gray;" onmouseover="this.style.backgroundColor='lightgray'" onmouseout="this.style.backgroundColor='gray'"></td>
+          <td onclick="battleship.shot(11,9,this);" style="width: 30px; height: 30px; background-color: gray;" onmouseover="this.style.backgroundColor='lightgray'" onmouseout="this.style.backgroundColor='gray'"></td>
+        </tr>
+        <tr>
+          <td>K</td>
+          <td onclick="battleship.shot(0,10,this);" style="width: 30px; height: 30px; background-color: gray;" onmouseover="this.style.backgroundColor='lightgray'" onmouseout="this.style.backgroundColor='gray'"></td>
+          <td onclick="battleship.shot(1,10,this);" style="width: 30px; height: 30px; background-color: gray;" onmouseover="this.style.backgroundColor='lightgray'" onmouseout="this.style.backgroundColor='gray'"></td>
+          <td onclick="battleship.shot(2,10,this);" style="width: 30px; height: 30px; background-color: gray;" onmouseover="this.style.backgroundColor='lightgray'" onmouseout="this.style.backgroundColor='gray'"></td>
+          <td onclick="battleship.shot(3,10,this);" style="width: 30px; height: 30px; background-color: gray;" onmouseover="this.style.backgroundColor='lightgray'" onmouseout="this.style.backgroundColor='gray'"></td>
+          <td onclick="battleship.shot(4,10,this);" style="width: 30px; height: 30px; background-color: gray;" onmouseover="this.style.backgroundColor='lightgray'" onmouseout="this.style.backgroundColor='gray'"></td>
+          <td onclick="battleship.shot(5,10,this);" style="width: 30px; height: 30px; background-color: gray;" onmouseover="this.style.backgroundColor='lightgray'" onmouseout="this.style.backgroundColor='gray'"></td>
+          <td onclick="battleship.shot(6,10,this);" style="width: 30px; height: 30px; background-color: gray;" onmouseover="this.style.backgroundColor='lightgray'" onmouseout="this.style.backgroundColor='gray'"></td>
+          <td onclick="battleship.shot(7,10,this);" style="width: 30px; height: 30px; background-color: gray;" onmouseover="this.style.backgroundColor='lightgray'" onmouseout="this.style.backgroundColor='gray'"></td>
+          <td onclick="battleship.shot(8,10,this);" style="width: 30px; height: 30px; background-color: gray;" onmouseover="this.style.backgroundColor='lightgray'" onmouseout="this.style.backgroundColor='gray'"></td>
+          <td onclick="battleship.shot(9,10,this);" style="width: 30px; height: 30px; background-color: gray;" onmouseover="this.style.backgroundColor='lightgray'" onmouseout="this.style.backgroundColor='gray'"></td>
+          <td onclick="battleship.shot(10,10,this);" style="width: 30px; height: 30px; background-color: gray;" onmouseover="this.style.backgroundColor='lightgray'" onmouseout="this.style.backgroundColor='gray'"></td>
+          <td onclick="battleship.shot(11,10,this);" style="width: 30px; height: 30px; background-color: gray;" onmouseover="this.style.backgroundColor='lightgray'" onmouseout="this.style.backgroundColor='gray'"></td>
+        </tr>
+        <tr>
+          <td>K</td>
+          <td onclick="battleship.shot(0,11,this);" style="width: 30px; height: 30px; background-color: gray;" onmouseover="this.style.backgroundColor='lightgray'" onmouseout="this.style.backgroundColor='gray'"></td>
+          <td onclick="battleship.shot(1,11,this);" style="width: 30px; height: 30px; background-color: gray;" onmouseover="this.style.backgroundColor='lightgray'" onmouseout="this.style.backgroundColor='gray'"></td>
+          <td onclick="battleship.shot(2,11,this);" style="width: 30px; height: 30px; background-color: gray;" onmouseover="this.style.backgroundColor='lightgray'" onmouseout="this.style.backgroundColor='gray'"></td>
+          <td onclick="battleship.shot(3,11,this);" style="width: 30px; height: 30px; background-color: gray;" onmouseover="this.style.backgroundColor='lightgray'" onmouseout="this.style.backgroundColor='gray'"></td>
+          <td onclick="battleship.shot(4,11,this);" style="width: 30px; height: 30px; background-color: gray;" onmouseover="this.style.backgroundColor='lightgray'" onmouseout="this.style.backgroundColor='gray'"></td>
+          <td onclick="battleship.shot(5,11,this);" style="width: 30px; height: 30px; background-color: gray;" onmouseover="this.style.backgroundColor='lightgray'" onmouseout="this.style.backgroundColor='gray'"></td>
+          <td onclick="battleship.shot(6,11,this);" style="width: 30px; height: 30px; background-color: gray;" onmouseover="this.style.backgroundColor='lightgray'" onmouseout="this.style.backgroundColor='gray'"></td>
+          <td onclick="battleship.shot(7,11,this);" style="width: 30px; height: 30px; background-color: gray;" onmouseover="this.style.backgroundColor='lightgray'" onmouseout="this.style.backgroundColor='gray'"></td>
+          <td onclick="battleship.shot(8,11,this);" style="width: 30px; height: 30px; background-color: gray;" onmouseover="this.style.backgroundColor='lightgray'" onmouseout="this.style.backgroundColor='gray'"></td>
+          <td onclick="battleship.shot(9,11,this);" style="width: 30px; height: 30px; background-color: gray;" onmouseover="this.style.backgroundColor='lightgray'" onmouseout="this.style.backgroundColor='gray'"></td>
+          <td onclick="battleship.shot(10,11,this);" style="width: 30px; height: 30px; background-color: gray;" onmouseover="this.style.backgroundColor='lightgray'" onmouseout="this.style.backgroundColor='gray'"></td>
+          <td onclick="battleship.shot(11,11,this);" style="width: 30px; height: 30px; background-color: gray;" onmouseover="this.style.backgroundColor='lightgray'" onmouseout="this.style.backgroundColor='gray'"></td>
+        </tr>
+      </tbody>
+    </table>
+    <p id="info"></p>
+    <div id="boat-list"/>
+      <p id="torpilleur" style="display: inline-block">Torpilleur</p>
+      <p id="sous-marin" style="display: inline-block">Sous-marin</p>
+      <p id="croiseur" style="display: inline-block">Croiseur</p>
+      <p id="porte-avion-1" style="display: inline-block">Porte-avion</p>
+      <p id="porte-avion-2" style="display: inline-block">Porte-avion</p>
+    </div>
+   <script src="index.js" charset="utf-8"></script>
+ </body>
+</html>
