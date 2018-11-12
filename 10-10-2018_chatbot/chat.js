@@ -1,5 +1,9 @@
 'use strict';
 
+/*
+  Bot: a bot class designed for chatbot
+  @params object keywords, object actions, string name, string description
+*/
 var Bot = function Bot(keywords,actions,name,description){
   this.keywords = keywords;
   this.name = name;
@@ -7,6 +11,9 @@ var Bot = function Bot(keywords,actions,name,description){
   this.actions = actions;
 }
 
+/*
+  Chat: a chat class designed for chatbot
+*/
 var Chat = function Chat(){
   this.bots = [];
   this.chatPeople = document.getElementsByClassName("people-wrapper")[0];
@@ -16,10 +23,11 @@ var Chat = function Chat(){
 }
 
 /*
-
+  Inits chat with bots its bots
+  @params object bots
 */
 Chat.prototype.init = function(bots) {
-  this.createSendMessageObservers();
+  this.createSendMessageListeners();
   bots.forEach(function(bot){
     this.addBot(bot['keywords'],bot['actions'],bot['name'],bot['description']);
     this.renderBot(bot['name'],bot['description']);
@@ -27,9 +35,9 @@ Chat.prototype.init = function(bots) {
 }
 
 /*
-
+  Creates event listeners to be able to send messages in the chat
 */
-Chat.prototype.createSendMessageObservers = function() {
+Chat.prototype.createSendMessageListeners = function() {
   this.textbar.addEventListener('keypress',function(e) {
     if (e.keyCode == 13) {
       this.sendMessage();
@@ -41,10 +49,10 @@ Chat.prototype.createSendMessageObservers = function() {
 }
 
 /*
-
+  Adds a bot to the chat
+  @params object keywords, object actions, string name, string description
 */
 Chat.prototype.addBot = function (keywords,actions,name = 'Simple Bot',description = 'A simple bot.') {
-
 
   for(var i = 0; i<keywords.length; i++) {
     keywords[i] = keywords[i].trim();
@@ -65,7 +73,8 @@ Chat.prototype.addBot = function (keywords,actions,name = 'Simple Bot',descripti
 }
 
 /*
-
+  Renders a bot in html preview
+  @params string name, string description
 */
 Chat.prototype.renderBot = function(name,description){
   var messageToInsert = '<div class="people"><div class="people-avatar material-icons mdl-badge mdl-badge--overlap" data-badge="1">face</div><div class="people-name">'
@@ -77,7 +86,7 @@ Chat.prototype.renderBot = function(name,description){
 }
 
 /*
-
+  Gets message text in html and sends it in the chat
 */
 Chat.prototype.sendMessage = function() {
   var messageText = this.textbar.value.trim();
@@ -91,7 +100,8 @@ Chat.prototype.sendMessage = function() {
 }
 
 /*
-
+  Checks if text given contains a bot keywords and send response if yes
+  @param String text
 */
 Chat.prototype.checkKeywords =  function(text) {
   text = text.toLowerCase();
@@ -113,7 +123,8 @@ Chat.prototype.checkKeywords =  function(text) {
 
 
 /*
-
+  Displays text given as a sended message in the chat
+  @params String messageText
 */
 Chat.prototype.displaySentMessage = function(messageText) {
   var messageToInsert = '<div class="sended message"><div class="message-text">'
@@ -127,7 +138,8 @@ Chat.prototype.displaySentMessage = function(messageText) {
 
 
 /*
-
+  Displays text given as a received message in the chat
+  @params String messageText
 */
 Chat.prototype.displayReceivedMessage = function(messageText){
   if(messageText === '') {
