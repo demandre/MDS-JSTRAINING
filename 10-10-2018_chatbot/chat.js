@@ -176,8 +176,8 @@ function badAction(command) {
 }
 
 function mapAction(command) {
-  if (command.indexOf('map'); === 0) {
-    command.splice(index, 1);
+  if (command.indexOf('map') === 0) {
+    command.splice(0,1);
   }
   var searchValue = command.join('+');
 
