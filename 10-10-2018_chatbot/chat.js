@@ -1,14 +1,29 @@
 'use strict';
 
 /*
+ * Action: a class of actions linked with a keywords
+ * @params {String} keyword, {Function} response
+ */
+var Action = function Action(keyword,response) {
+  this.keyword = keyword.trim();
+  if(this.keyword === '') {
+    this.keyword = 'default';
+  }
+
+  if(typeof response !== 'function') {
+    response = function () {return 'An error occured (function given is not a function)';}
+  }
+  this.response = response;
+}
+
+/*
  * Bot: a bot class designed for chatbot
  * @params {Array} keywords, {Array} actions, {String} name, {String} description
  */
-var Bot = function Bot(keywords,actions,name,description){
-  this.keywords = keywords;
+var Bot = function Bot(actions,name,description){
+  this.actions = actions;
   this.name = name;
   this.description = description;
-  this.actions = actions;
 }
 
 /*
@@ -52,21 +67,6 @@ Chat.prototype.createSendMessageListeners = function() {
  * @params {Bot} bot
  */
 Chat.prototype.addBot = function (bot) {
-  var keywords = bot.keywords;
-  var actions = bot.actions
-
-  for(var i = 0 ; i < keywords.length ; i++) {
-    keywords[i] = keywords[i].trim();
-    if(keywords[i] === '') {
-      return 'empty keyword';
-    }
-  }
-  for(var i = 0 ; i < actions.length ; i++) {
-    if(typeof actions[i] !== 'function') {
-      return 'wrong action';
-    }
-  }
-
   this.bots.push(bot);
   this.renderBot(bot);
 }
@@ -105,17 +105,15 @@ Chat.prototype.sendMessage = function() {
  * @param {String} text
  */
 Chat.prototype.checkKeywords =  function(text) {
-  var keywordsArray = text.toLowerCase().split(',');
+  var commandArray = text.toLowerCase().split(',');
 
-  keywordsArray.forEach(function(keywords){
+  commandArray.forEach(function(command){
+    command = command.split(' ');
     this.bots.forEach(function(bot){
-      bot.keywords.forEach(function(botKey,index){
-        var multipleWords = keywords.split(' ');
-        multipleWords.forEach(function(word){
-          if(word == botKey){
-            this.displayReceivedMessage(bot.actions[index](multipleWords));
+      bot.actions.forEach(function(action){
+          if(command[0] == action.keyword){
+            this.displayReceivedMessage(action.response(command));
           }
-        }.bind(this));
       }.bind(this));
     }.bind(this));
   }.bind(this));
@@ -157,32 +155,31 @@ Chat.prototype.displayReceivedMessage = function(messageText){
   this.chatBody.scrollTop = this.chatBody.scrollHeight;
 }
 
-function pongAction(multipleWords) {
+function pongAction(command) {
   return 'Pong';
 }
 
-function pingAction(multipleWords) {
+function pingAction(command) {
   return 'Ping';
 }
 
-function howAreYouAction(multipleWords) {
+function howAreYouAction(command) {
   return 'How are you?';
 }
 
-function greatAction(multipleWords) {
+function greatAction(command) {
   return 'great!';
 }
 
-function badAction(multipleWords) {
+function badAction(command) {
   return 'ohhh... well, too bad for you.';
 }
 
-function mapAction(multipleWords) {
-  var index = multipleWords.indexOf('map');
-  if (index > -1) {
-    multipleWords.splice(index, 1);
+function mapAction(command) {
+  if (command.indexOf('map'); === 0) {
+    command.splice(index, 1);
   }
-  var searchValue = multipleWords.join('+');
+  var searchValue = command.join('+');
 
   if(searchValue == ''){
     searchValue = 'paris';
@@ -193,7 +190,7 @@ function mapAction(multipleWords) {
   +'" allowfullscreen></iframe>'
 }
 
-function youtubeAction(multipleWords) {
+function youtubeAction(command) {
   return 'En cours d`implémentation.'
 }
 
@@ -201,38 +198,26 @@ var chat = new Chat();
 var bots = [
   new Bot(
     [
-      'ping',
-      'pong'
-    ],
-    [
-      pongAction,
-      pingAction
+      new Action('ping',pongAction),
+      new Action('pong',pingAction)
     ],
     'pongBot',
     'ping pong'
   ),
   new Bot(
     [
-      'hello',
-      'fine',
-      'sad'
-    ],
-    [
-      howAreYouAction,
-      greatAction,
-      badAction
+      new Action('hello',howAreYouAction),
+      new Action('fine',greatAction),
+      new Action('sad',badAction)
+
     ],
     'helloBot',
     'says how are you'
   ),
   new Bot(
     [
-      'map',
-      'youtube'
-    ],
-    [
-      mapAction,
-      youtubeAction,
+      new Action('map',mapAction),
+      new Action('youtube',youtubeAction)
     ],
     'googleBot',
     'Uses google api'
