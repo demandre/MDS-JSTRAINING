@@ -1,9 +1,9 @@
 'use strict';
 
 /*
-  Bot: a bot class designed for chatbot
-  @params object keywords, object actions, string name, string description
-*/
+ * Bot: a bot class designed for chatbot
+ * @params {Array} keywords, {Array} actions, {String} name, {String} description
+ */
 var Bot = function Bot(keywords,actions,name,description){
   this.keywords = keywords;
   this.name = name;
@@ -12,8 +12,8 @@ var Bot = function Bot(keywords,actions,name,description){
 }
 
 /*
-  Chat: a chat class designed for chatbot
-*/
+ * Chat: a chat class designed for chatbot
+ */
 var Chat = function Chat(){
   this.bots = [];
   this.chatPeople = document.getElementsByClassName("people-wrapper")[0];
@@ -23,9 +23,9 @@ var Chat = function Chat(){
 }
 
 /*
-  Inits chat with bots its bots
-  @params object bots
-*/
+ * Inits chat with bots its bots
+ * @params {Bot} bots
+ */
 Chat.prototype.init = function(bots) {
   this.createSendMessageListeners();
   bots.forEach(function(bot){
@@ -34,8 +34,8 @@ Chat.prototype.init = function(bots) {
 }
 
 /*
-  Creates event listeners to be able to send messages in the chat
-*/
+ * Creates event listeners to be able to send messages in the chat
+  */
 Chat.prototype.createSendMessageListeners = function() {
   this.textbar.addEventListener('keypress',function(e) {
     if (e.keyCode == 13) {
@@ -48,21 +48,20 @@ Chat.prototype.createSendMessageListeners = function() {
 }
 
 /*
-  Adds a bot to the chat
-  @params Bot bot
-*/
+ * Adds a bot to the chat
+ * @params {Bot} bot
+ */
 Chat.prototype.addBot = function (bot) {
   var keywords = bot.keywords;
   var actions = bot.actions
 
-  for(var i = 0; i<keywords.length; i++) {
+  for(var i = 0 ; i < keywords.length ; i++) {
     keywords[i] = keywords[i].trim();
-    if(keywords[i].trim() === '') {
+    if(keywords[i] === '') {
       return 'empty keyword';
     }
   }
-
-  for(var i = 0; i < actions.length; i++) {
+  for(var i = 0 ; i < actions.length ; i++) {
     if(typeof actions[i] !== 'function') {
       return 'wrong action';
     }
@@ -73,39 +72,40 @@ Chat.prototype.addBot = function (bot) {
 }
 
 /*
-  Renders a bot in html preview
-  @params Bot bot
-*/
+ * Renders a bot in html preview
+ * @params {Bot} bot
+ */
 Chat.prototype.renderBot = function(bot){
   var messageToInsert = '<div class="people"><div class="people-avatar material-icons mdl-badge mdl-badge--overlap" data-badge="1">face</div><div class="people-name">'
   + bot.name
   + '</div><div class="people-preview">'
   + bot.description
   +'</div></div>';
+
   this.chatPeople.innerHTML += messageToInsert;
 }
 
 /*
-  Gets message text in html and sends it in the chat
-*/
+ * Gets message text in html and sends it in the chat
+ */
 Chat.prototype.sendMessage = function() {
   var messageText = this.textbar.value.trim();
 
   if(messageText === '') {
     return 'Empty message';
   }
+
   this.textbar.value = '';
   this.displaySentMessage(messageText);
   this.checkKeywords(messageText);
 }
 
 /*
-  Checks if text given contains a bot keywords and send response if yes
-  @param String text
-*/
+ * Checks if text given contains a bot keywords and send response if yes
+ * @param {String} text
+ */
 Chat.prototype.checkKeywords =  function(text) {
-  text = text.toLowerCase();
-  var keywordsArray = text.split(',');
+  var keywordsArray = text.toLowerCase().split(',');
 
   keywordsArray.forEach(function(keywords){
     this.bots.forEach(function(bot){
@@ -123,34 +123,36 @@ Chat.prototype.checkKeywords =  function(text) {
 
 
 /*
-  Displays text given as a sended message in the chat
-  @params String messageText
-*/
+ * Displays text given as a sended message in the chat
+ * @params {String} messageText
+ */
 Chat.prototype.displaySentMessage = function(messageText) {
   var messageToInsert = '<div class="sended message"><div class="message-text">'
   + messageText
   + '</div> <div class="message-date">'
   + new Date()
   + '</div></div>';
+
   this.chatBody.innerHTML += messageToInsert;
   this.chatBody.scrollTop = this.chatBody.scrollHeight;
 }
 
 
 /*
-  Displays text given as a received message in the chat
-  @params String messageText
-*/
+ * Displays text given as a received message in the chat
+ * @params {String} messageText
+ */
 Chat.prototype.displayReceivedMessage = function(messageText){
   if(messageText === '') {
-    console.log('vide');
     return;
   }
+
   var messageToInsert = '<div class="received message"><div class="message-text">'
   + messageText
   + '</div> <div class="message-date">'
   + new Date()
   + '</div></div>';
+
   this.chatBody.innerHTML += messageToInsert;
   this.chatBody.scrollTop = this.chatBody.scrollHeight;
 }
