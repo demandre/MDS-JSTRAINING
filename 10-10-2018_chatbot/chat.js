@@ -29,8 +29,7 @@ var Chat = function Chat(){
 Chat.prototype.init = function(bots) {
   this.createSendMessageListeners();
   bots.forEach(function(bot){
-    this.addBot(bot['keywords'],bot['actions'],bot['name'],bot['description']);
-    this.renderBot(bot['name'],bot['description']);
+    this.addBot(bot);
   }.bind(this));
 }
 
@@ -50,9 +49,11 @@ Chat.prototype.createSendMessageListeners = function() {
 
 /*
   Adds a bot to the chat
-  @params object keywords, object actions, string name, string description
+  @params Bot bot
 */
-Chat.prototype.addBot = function (keywords,actions,name = 'Simple Bot',description = 'A simple bot.') {
+Chat.prototype.addBot = function (bot) {
+  var keywords = bot.keywords;
+  var actions = bot.actions
 
   for(var i = 0; i<keywords.length; i++) {
     keywords[i] = keywords[i].trim();
@@ -67,20 +68,19 @@ Chat.prototype.addBot = function (keywords,actions,name = 'Simple Bot',descripti
     }
   }
 
-  this.bots.push(
-    new Bot(keywords,actions,name,description)
-  );
+  this.bots.push(bot);
+  this.renderBot(bot);
 }
 
 /*
   Renders a bot in html preview
-  @params string name, string description
+  @params Bot bot
 */
-Chat.prototype.renderBot = function(name,description){
+Chat.prototype.renderBot = function(bot){
   var messageToInsert = '<div class="people"><div class="people-avatar material-icons mdl-badge mdl-badge--overlap" data-badge="1">face</div><div class="people-name">'
-  + name
+  + bot.name
   + '</div><div class="people-preview">'
-  + description
+  + bot.description
   +'</div></div>';
   this.chatPeople.innerHTML += messageToInsert;
 }
@@ -197,50 +197,44 @@ function youtubeAction(multipleWords) {
 
 var chat = new Chat();
 var bots = [
-  {
-    keywords:
+  new Bot(
     [
       'ping',
       'pong'
     ],
-    actions:
     [
       pongAction,
       pingAction
     ],
-    name: 'pongBot',
-    description: 'ping pong'
-  },
-  {
-    keywords:
+    'pongBot',
+    'ping pong'
+  ),
+  new Bot(
     [
       'hello',
       'fine',
       'sad'
     ],
-    actions:
     [
       howAreYouAction,
       greatAction,
       badAction
     ],
-    name: 'helloBot',
-    description: 'says how are you'
-  },
-  {
-    keywords:
+    'helloBot',
+    'says how are you'
+  ),
+  new Bot(
     [
       'map',
       'youtube'
     ],
-    actions:
     [
       mapAction,
       youtubeAction,
     ],
-    name: 'googleBot',
-    description: 'Uses google api'
-  }
+    'googleBot',
+    'Uses google api'
+  )
 ]
 
 chat.init(bots);
